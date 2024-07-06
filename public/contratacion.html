@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!--<form action="http://localhost:3000" id="formulario">
+        <fieldset>
+            <label for="nombre">Nombre: </label>
+            <input type="text " id="nombre" name="nombre"><br>
+            <label for="apellido">Apellido: </label>
+            <input type="text " id="apellido" name="apellido"><br>
+            <label for="edad">Edad: </label>
+            <input type="number" id="edad" name="edad"><br>
+            <label for="email">Correo electronico: </label>
+            <input type="email id="email" name="email"><br>
+            <label for="contrasenia">Contraseña: </label>
+            <input type="password" id="contrasenia" name="contrasenia"><br>
+
+            Selecione una sucursal:
+            <select name="sucursal" id="sucursal"><br>
+                <option value="1">Palermo</option>
+                <option value="2">Devoto</option>
+                <option value="3">Caballito</option>
+            </select><br>
+            Seleccione un servicio:
+            <select name="servicios" id="servicios"><br>
+                <option value="1">Gap</option>
+                <option value="2">Crossfit</option>
+                <option value="3">Taekwondo</option>
+                <option value="4">Musculacion</option>
+                <option value="5">Funcional</option>
+                <option value="6">Yoga</option>
+            </select>
+            <br>
+            Seleccione como va abonar:
+            <select name="servicios" id="servicios"><br>
+                <option value="1">Anual</option>
+                <option value="2">Semestral</option>
+                <option value="3">Mensual</option>
+                <option value="4">Semanal</option>
+            </select>
+            <br>
+            Seleccione forma de pago:
+            <select name="servicios" id="servicios"><br>
+                <option value="1">Efectivo</option>
+                <option value="2">Debito</option>
+                <option value="3">Tarjeta</option>
+            </select>
+            <br>
+            <input type="submit" value="Enviar">
+            <button type="">Modificar</button>
+            <button type="delete">Cancelar</button>
+        </fieldset>
+    </form>-->
+    
+    <section id="contratacion">
+        <h1>Lista de imscripciones de nuestros clientes</h1>
+        <!-- en el buscador http://localhost:3000/contratacion.html  -->
+
+    </section>
+    <script>
+        fetch('/usuario')
+            .then (response => response.json())
+            .then(data => {
+                const usuario =data;                
+                const usuarioContainer = document.querySelector('#contratacion');
+                usuario.forEach(usuario => {
+                    const usuarioElement = document.createElement('div');
+                    usuarioElement.innerHTML = `  
+                        <ul>
+                            <li>Id: ${usuario.id_usuario}</li>
+                            <li>Nombre: ${usuario.nombre}</li>
+                            <li>Apellido:${usuario.apellido}</li>
+                            <li>Edad:${usuario.edad}</li>
+                            <li>Email:${usuario.email}</li>
+                            <li>Sucursal:${usuario.sucursal}</li>
+                            <li>Direccion:${usuario.direccion}</li>
+                            <li>Wasap:${usuario.wasap}</li>
+                            <li>Clase:${usuario.clase}</li>
+                            <li>Horario:${usuario.horario}</li>
+                            <li>Profesor:${usuario.profesor}</li>
+                            <li>Contrato:${usuario.contratacion}</li>
+                            <li>Precio $:${usuario.precio}</li>
+                            <li>Forma de pago:${usuario.pago}</li>                                  
+                        </ul>                     
+                `;
+                usuarioContainer.appendChild(usuarioElement);
+                });
+                
+            })
+           
+    </script>
+
+    
+</body>
+</html>
