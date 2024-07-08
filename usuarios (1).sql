@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-07-2024 a las 17:12:06
+-- Tiempo de generación: 08-07-2024 a las 06:27:56
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -134,11 +134,18 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `edad`, `email`, `password`, `id_sucursales`, `id_servicios`, `id_contratacion`, `id_formaPago`) VALUES
-(2, 'Ramón', 'Mesa', 36, 'ramon@gmail.com', '0198gallo', 2, 4, 3, 1),
+(2, 'Yolanda', 'Ruiz', 30, 'yoly@gmail', '0198gallo', 2, 1, 1, 1),
 (3, 'Mario', 'Gimenez', 45, 'gimenez@gmail.com', '1236hola', 2, 4, 2, 2),
 (4, 'Maria', 'Carrasco', 31, 'maria@gmail.com', '8956gato', 1, 6, 3, 3),
 (5, 'Susana', 'Far', 27, 'susana@gmail.com', '2554', 3, 2, 1, 2),
-(8, 'Roberto', 'Casan', 29, 'roberto@gmail.com', '5601lola', 1, 2, 1, 3);
+(8, 'Roberto', 'Casan', 29, 'roberto@gmail.com', '5601lola', 1, 2, 1, 3),
+(15, 'Pablo', 'Ramirez', 33, 'ramirez@gmail', '', 2, 1, 1, 1),
+(16, 'Luis', 'Escobar', 50, 'escobar@gmail', '', 2, 2, 1, 3),
+(17, 'Tamara', 'Paes', 20, 'paes@gmail', '', 2, 1, 1, 2),
+(18, 'Diego', 'Presa', 27, 'diego@gmail', '122536589', 3, 1, 2, 2),
+(19, 'Valeria', 'Paz', 45, 'valeria@gmail.com', '', 1, 1, 1, 1),
+(20, 'Lorena', 'Gil', 26, 'gil@gmail.com', '', 1, 2, 1, 2),
+(25, 'Tomas', 'Fernandez', 26, 'gil@gmail.com', '', 1, 2, 1, 2);
 
 --
 -- Índices para tablas volcadas
@@ -212,7 +219,7 @@ ALTER TABLE `sucursales`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Restricciones para tablas volcadas
