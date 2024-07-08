@@ -13,11 +13,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.get("/", function(req,res){
-    console.log("contratacion")
-})
-// Read all resources
+   console.log("contratacion")})
+
 app.get('/usuario', async (req, res) => {
-    const sql = `SELECT usuario.id_usuario, usuario.nombre , usuario.apellido, usuario.edad, usuario.email, 
+    const sql = `SELECT usuario.id_usuario, usuario.nombre , usuario.apellido, usuario.edad, usuario.email, usuario.password, 
                 sucursales.nombre_sucursal as sucursal,sucursales.direccion, sucursales.wasap, 
                 servicios.clase, servicios.diasHorarios as horario, servicios.profesor, 
                 contratacion.tipo_contratacion as contratacion, contratacion.precio, 
@@ -43,7 +42,7 @@ app.get('/usuario', async (req, res) => {
 //read a specific resource
 app.get('/usuario/:id', async (req, res) => {
     const id= req.params.id
-    const sql = `SELECT usuario.id_usuario, usuario.nombre , usuario.apellido, usuario.edad, usuario.email, 
+    const sql = `SELECT usuario.id_usuario, usuario.nombre , usuario.apellido, usuario.edad, usuario.email,usuario.password, 
                 sucursales.nombre_sucursal as sucursal,sucursales.direccion, sucursales.wasap, 
                 servicios.clase, servicios.diasHorarios as horario, servicios.profesor, 
                 contratacion.tipo_contratacion as contratacion, contratacion.precio, 
@@ -70,19 +69,21 @@ app.get('/usuario/:id', async (req, res) => {
 // Create a new resource
 app.post('/usuario', async (req, res) => {
     const usuario = req.body;
-    //const sql = `INSERT INTO usuario SET ?`;
-    
+    const sql = `INSERT INTO usuario SET ?`;
+
     try {
         const connection = await pool.getConnection()
         const [rows] = await connection.query(sql, [usuario]);
         connection.release();
         console.log(rows)
-        //res.json(rows);
+        res.json(rows);
         res.send(`
             <h1>Usuario creado con id: ${rows.insertId}</h1>
         `);
     } catch (error) {
-        res.send(500).send('Internal server error')
+        //res.send(500).send('Internal server error')
+        console.error('Error en la consulta SQL:',error);
+        res.status(500).send('Internal server error')
     }
 });
 
@@ -103,7 +104,9 @@ app.put('/usuario/:id', async (req, res) => {
             <h1>Usuario actualizado id: ${id}</h1>
         `);
     } catch (error) {
-        res.send(500).send('Internal server error')
+        //res.send(500).send('Internal server error')
+        console.error('Error en la consulta SQL:', error);
+        res.status(500).send('Internal server error');
     }
 
 });

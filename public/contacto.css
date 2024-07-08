@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+img {
+    max-width: 100%;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+header {
+    background: linear-gradient(
+        rgba(29,30,35,0.5),
+        rgba(34, 29, 35, 0.5)),
+        url(./imgContacto/banner.png);  /* cambiar el fondo*/
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    min-height: 60vh;  
+    padding: 80px 0 0 0;
+    background-attachment: fixed;
+}
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    max-width: 120px;
+    max-height: 100px;
+    margin: 40px;    
+}
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+.menu .navbar ul li a {
+    font-size: 25px;
+    padding: 20px;
+    color: white;
+    display: block;
+    font-weight: 600px;
+}
+.menu .navbar ul li a:hover  {
+    color:  rgb(255, 189, 89);
+}
+#menu {
+    display: none;
+}
+.menu-icono {
+    width: 40px;
+    height: 40px;
+    padding-right: 10px;
+}
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+.menu-container {
+    text-align: center;
+}
+.sucursales-contacto  {    
+    width: 800%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;    
+    font-weight: bold;
+    font-size: 28px;  
+}
+.sucursales {
+    padding-bottom: 20px;
+}
+.sucursales-contacto  a  {  
+    background-color:  rgb(255, 189, 89);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;   
+    align-content: center;
+    padding: 0 10px; 
+     
+}
+.sucursales-contacto  a:hover {
+    background-color: black;
+    color: #d4d4d4;
+}
+.flecha {
+    display: block;
+    padding-left: 90%;
+    
+}
+
+
+/*-------- FOOTER---------*/
+.footer {
+    padding: 50px 0 25px;
+    background-color: #000;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between
+}
+
+.link h3 {
+    font-size: 17px;
+    color: #ffffff;
+    margin-bottom: 10px ;
+    text-transform: uppercase;
+}
+.link  a {
+    font-size: 17px;
+    color: #d4d4d4;
+    display: block;
+    margin-bottom: 10px;
+}
+.link-redes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+}
+.link a:hover {
+    color:  rgb(255, 189, 89);
+}
+.footer-copy {
+    text-align: center;
+    color: #fff;
+}
+
+/*----CONTACTO----*/
+.Titulo {
+    /*background: linear-gradient(to bottom, rgb(32, 32, 27), white);
+    text-align: center;
+    margin-bottom: 50px;*/
+    background: rgba(255, 189, 89);
+    text-align: center;
+}
+
+.Titulo h1 {
+    color: rgba(1, 1, 0.5, 1);
+    text-decoration: underline;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    text-shadow: 2px 2px 5px rgb(255, 189, 89);
+}
+
+.Titulo p {
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.Contacto {
+    background: linear-gradient(to bottom, white, rgb(32,32,27));
+    padding-bottom: 20px;
+    /*background: linear-gradient(to bottom, white, rgb(32, 32, 27));
+    padding-bottom: 20px;*/
+}
+
+.Contacto .contenedorI {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contImagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contImagen img {
+    max-width: 60%;
+    height: auto;
+    padding-left: 30px;
+}
+
+.contformulario {
+    display: grid;
+    gap: 15px;
+    flex-direction: column;
+    border-radius: 10%;
+    background-color: #f9f9f9;
+    padding: 40px;
+    border: 5px solid rgb(255, 189, 89);
+}
+
+.contformulario h2 {
+    text-align: center;
+}
+
+.contformulario form {
+    display: grid;
+    gap: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], 
+input[type="number"], input[type="password"],
+textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(255, 189, 89);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    border: 1px solid rgb(255, 189, 89);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+.enviar ,
+.modificar,
+.cancelar {
+    padding: 10px 20px;
+    background-color: rgb(255, 189, 89);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+
+.enviar:hover,
+.modificar:hover,
+.cancelar:hover {
+    background-color: black;
+    color: #d4d4d4;
+}
+
+
+
+
+
+/*la parte responsive*/
+@media (max-width: 768px) {
+    .Contacto .contenedorI {
+        grid-template-columns: 1fr;
+    }
+    .ubicacion {
+        grid-template-columns: 1fr;
+    }
+    
+    .logo {
+        width: 100px;
+    }    
+}
+
+@media screen and (max-width: 720px) {
+    .menu label {
+        display: initial;
+    }
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: inherit;
+        background-color: #ff783b;
+        display: none;
+    }
+    .menu .navbar ul li {
+        width: 100%;
+    }
+    .menu .navbar ul li a:hover {
+        color: #191a1f;
+    }
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+    .footer {
+        padding: 30px;
+        height: auto;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center; 
+        max-width: 200px;       
+    }
+    .link .link-redes {
+        line-height: 20px;        
+    }
+}
+
+ Estilo para la barra de progreso 
+.current-progress {
+    background-color: #0e0d0d;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 10px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.current-progress-percentage {
+    background-color: #ff783b;
+    height: 100%;
+    width: 0;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 10px;
+    color: white;
+    font-weight: bold;
+    transition: width 0.1s ease;
+}
