@@ -1,6 +1,6 @@
 import express from 'express';
 import pool from './config/db.js';
-//import 'dotenv/config';
+import 'dotenv/config';
 
 // Import required modules
 
