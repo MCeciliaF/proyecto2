@@ -1,5 +1,8 @@
 
-Imagen de deply andando
+
+codigo deply https://proyecto2-d0wt.onrender.com/contratacion.html
+
+Imagen de deploy andando
 ![image](https://github.com/MCeciliaF/proyecto2/assets/166681039/7aff85a1-dffe-4ca3-8b2b-835c2939cc06)
 
 Imagen de relaciones en base de dato
